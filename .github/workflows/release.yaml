@@ -8,7 +8,7 @@ name: Create and publish a Docker image
 on:
   push:
     tags: ['*']
-    branches: ['main', 'finish-docker-build']
+    branches: ['main']
 
 env:
   REGISTRY: ghcr.io
