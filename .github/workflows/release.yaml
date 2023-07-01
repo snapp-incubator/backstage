@@ -25,6 +25,24 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Set Node.js 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+
+      - name: Run install
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: install # will run `yarn install` command
+      - name: Run tsc
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: tsc # will run `yarn tsc` command
+      - name: Run build:backend
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: build:backend # will run `yarn build:backend` command
+
       - name: Log in to the Container registry
         uses: docker/login-action@v2
         with:
